@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Supplement and Hydration Calculator | Health and Fitness</title>
+
+    <!-- Meta Description -->
+    <meta name="description"
+        content="Calculate the ideal amount of creatine, whey protein, daily protein intake, and water consumption with our personalized calculator to optimize your health and fitness performance.">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords"
+        content="supplement calculator, hydration calculator, dietary supplements, body hydration, health and fitness, creatine, whey protein, sports nutrition, water intake, protein for athletes, bodybuilding supplements, nutrition tips, physical performance, muscle recovery, muscle mass gain, proper hydration, natural supplements, weight loss supplements, weight gain supplements, creatine monohydrate, isolate whey protein, concentrate whey protein, supplements for athletes, pre-workout supplements, post-workout supplements, balanced diet, quality supplements, sports health, performance supplements, strength supplements, endurance supplements, hydration during training, daily water intake, supplementation plans, vegan supplements, fitness supplements, health supplements, safe supplements, effective supplements, nutritional guidance, recommended supplements, athlete supplements, proper supplementation, hydration and performance, supplements and wellness, supplements and nutrition, recovery supplements, muscle health supplements, hydration and health, training supplements, amateur athlete supplements, professional athlete supplements, sports supplements, exercise supplements, sports supplementation, essential supplements, high-performance supplements, training supplements, diet supplements, wellness supplements, physical health supplements, fitness and health supplements, elite athlete supplements, endurance sports supplements, strength sports supplements, high-intensity sports supplements, intense training supplements, strength training supplements, endurance training supplements, training supplements, sports nutrition supplements, athletic performance supplements, elite athlete supplements, endurance athlete supplements, strength athlete supplements, bodybuilding athlete supplements, crossfit athlete supplements, running athlete supplements, cycling athlete supplements, swimming athlete supplements, football athlete supplements, volleyball athlete supplements, basketball athlete supplements, gymnastics athlete supplements, martial arts athlete supplements, yoga athlete supplements, pilates athlete supplements, triathlon athlete supplements, marathon athlete supplements, competition athlete supplements, daily training athlete supplements, high-energy athlete supplements, high-performance athlete supplements, national elite athlete supplements, international elite athlete supplements, high-intensity athlete supplements, professional athlete supplements, amateur athlete supplements, beginner athlete supplements, experienced athlete supplements, advanced athlete supplements, high-competition athlete supplements, endurance and strength athlete supplements, endurance and hypertrophy athlete supplements">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Supplement and Hydration Calculator | Health and Fitness">
+    <meta property="og:description"
+        content="Calculate the ideal amount of creatine, whey protein, daily protein, and water intake to optimize your health and fitness performance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yoursite.com/calculator">
+    <meta property="og:image" content="https://yoursite.com/images/thumbnail-calculator.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Supplement and Hydration Calculator | Health and Fitness">
+    <meta name="twitter:description"
+        content="Calculate the ideal amount of creatine, whey protein, daily protein, and water intake to optimize your health and fitness performance.">
+    <meta name="twitter:image" content="https://yoursite.com/images/thumbnail-calculator.png">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Supplement and Hydration Calculator",
+        "url": "https://yoursite.com/calculator",
+        "description": "Calculate the ideal amount of creatine, whey protein, daily protein intake, and water consumption with our personalized calculator to optimize your health and fitness performance.",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript to run",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- JavaScript -->
+    <script src="../script.js" defer></script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Supplement and Hydration Calculator",
+            "url": "https://yoursite.com/calculator",
+            "description": "An online tool to calculate the ideal amount of creatine, whey protein, daily protein intake, and water consumption based on body weight and activity level.",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "All",
+            "browserRequirements": "Requires JavaScript to run",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body class="bg-gradient-to-r from-green-100 to-blue-200 min-h-screen p-4">
+    <div class="w-full max-w-2xl mx-auto flex justify-end mb-4">
+        <select id="language-selector"
+            class="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option value="pt-BR">Português (BR)</option>
+            <option value="en-US" selected>English (US)</option>
+            <option value="es-ES">Español (ES)</option>
+        </select>
+    </div>
+
+    <header class="w-full max-w-2xl bg-white rounded-xl shadow-lg p-6 mx-auto">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6" data-i18n="header_title">Supplement and Hydration
+            Calculator</h1>
+    </header>
+
+    <main class="w-full max-w-2xl bg-white rounded-xl shadow-lg p-6 mt-4 mx-auto">
+        <form id="calculator" class="space-y-6" aria-labelledby="calculator-heading">
+            <h2 id="calculator-heading" class="sr-only" data-i18n="form_heading">Calculator Form</h2>
+
+            <div>
+                <label for="weight" class="block text-gray-700 text-lg font-medium" data-i18n="weight_label">Body Weight
+                    (kg):</label>
+                <input type="number" id="weight" name="weight" required aria-required="true"
+                    class="mt-2 block w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+                    min="1" step="0.1" placeholder="Enter your weight in kg" data-i18n-placeholder="weight_placeholder">
+            </div>
+
+            <div>
+                <label for="activity" class="block text-gray-700 text-lg font-medium"
+                    data-i18n="activity_label">Activity Level:</label>
+                <select id="activity" name="activity" aria-required="true"
+                    class="mt-2 block w-full px-4 py-3 border rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-400">
+                    <option value="sedentary" data-i18n="sedentary">Sedentary</option>
+                    <option value="light" data-i18n="light">Lightly Active</option>
+                    <option value="moderate" data-i18n="moderate">Moderately Active</option>
+                    <option value="active" data-i18n="active">Active</option>
+                    <option value="very_active" data-i18n="very_active">Very Active</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="calculate()"
+                class="w-full bg-green-500 text-white py-3 rounded-md hover:bg-green-600 transition duration-200 text-lg font-semibold"
+                data-i18n="calculate_button">Calculate</button>
+        </form>
+
+        <div id="results" class="mt-8 hidden bg-gray-100 p-6 rounded-md" aria-live="polite">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4" data-i18n="results_heading">Results</h2>
+            <p class="text-gray-700 text-lg"><strong data-i18n="creatine">Creatine:</strong> <span
+                    id="creatine">-</span> g/day</p>
+            <p class="text-gray-700 text-lg"><strong data-i18n="whey_protein">Whey Protein:</strong> <span
+                    id="whey">-</span> g/day</p>
+            <p class="text-gray-700 text-lg"><strong data-i18n="total_protein">Total Protein:</strong> <span
+                    id="protein">-</span> g/day</p>
+            <p class="text-gray-700 text-lg"><strong data-i18n="water_intake">Water Intake:</strong> <span
+                    id="water">-</span>
+                liters/day</p>
+        </div>
+    </main>
+
+    <section id="additional-content" class="w-full max-w-2xl bg-white rounded-xl shadow-lg p-6 mt-8 mx-auto">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4" data-i18n="benefits_title">Benefits of Supplements</h2>
+        <p class="text-gray-700 mb-6" data-i18n="benefits_description">
+            Proper use of supplements like creatine and whey protein can bring numerous benefits to your health and
+            physical performance. These supplements are widely used by athletes, fitness enthusiasts, and individuals
+            looking to improve body composition and optimize muscle recovery.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="creatine_section">Creatine</h3>
+        <p class="text-gray-700 mb-4" data-i18n="creatine_description">
+            Creatine is one of the most studied and effective supplements for muscle mass gain and strength increase. It
+            works by providing additional energy to the muscles during high-intensity exercises, allowing you to train
+            harder and longer. Additionally, creatine aids in post-workout recovery by reducing muscle fatigue and
+            improving performance in repetitive activities.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="whey_section">Whey Protein</h3>
+        <p class="text-gray-700 mb-4" data-i18n="whey_description">
+            Whey protein is a high-quality protein containing all the essential amino acids necessary for protein
+            synthesis. It is ideal for post-workout consumption, helping in muscle recovery and the growth of new muscle
+            tissues. Additionally, whey protein can be used as a convenient protein source for people with busy
+            schedules, ensuring that daily protein needs are efficiently met.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="hydration_section">Importance of Hydration</h3>
+        <p class="text-gray-700 mb-4" data-i18n="hydration_description">
+            Staying adequately hydrated is essential for the optimal functioning of the body. Water is crucial for
+            temperature regulation, nutrient transport, and the removal of metabolic waste. The recommended daily water
+            intake varies based on body weight and physical activity level. Dehydration can lead to a series of health
+            issues, including fatigue, decreased physical and mental performance, and an increased risk of injuries.
+        </p>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="nutrition_tips_title">Sports Nutrition Tips</h3>
+        <p class="text-gray-700 mb-4" data-i18n="nutrition_tips_description">
+            To maximize the benefits of supplements and improve your physical performance, it is essential to follow
+            some sports nutrition tips:
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+            <li data-i18n="tip1">Consume balanced meals with proteins, carbohydrates, and healthy fats.</li>
+            <li data-i18n="tip2">Stay hydrated before, during, and after workouts.</li>
+            <li data-i18n="tip3">Plan your meals and snacks to ensure adequate nutrient intake throughout the day.</li>
+            <li data-i18n="tip4">Avoid processed foods and those high in refined sugars.</li>
+            <li data-i18n="tip5">Get enough sleep to allow for muscle recovery and protein synthesis.</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="faq_title">FAQs - Frequently Asked Questions
+        </h3>
+        <p class="text-gray-700 mb-4">
+            <strong data-i18n="faq1_question">1. When should I take creatine?</strong><br>
+            <span data-i18n="faq1_answer">Creatine can be taken at any time of the day, but many recommend consuming it
+                post-workout to aid in muscle recovery. It's important to maintain a consistent daily intake to achieve
+                the best results.</span>
+        </p>
+        <p class="text-gray-700 mb-4">
+            <strong data-i18n="faq2_question">2. What is the difference between concentrated and isolated whey
+                protein?</strong><br>
+            <span data-i18n="faq2_answer">Concentrated whey protein contains more carbohydrates and fats, while isolated
+                whey protein has a higher concentration of proteins and fewer carbohydrates and fats. The choice depends
+                on your nutritional needs and personal goals.</span>
+        </p>
+        <p class="text-gray-700 mb-4">
+            <strong data-i18n="faq3_question">3. How long does it take to see results with supplements?</strong><br>
+            <span data-i18n="faq3_answer">Results can vary depending on your diet, exercise routine, and consistency in
+                using supplements. Generally, you can notice improvements in strength and body composition after a few
+                weeks of regular use.</span>
+        </p>
+        <p class="text-gray-700 mb-4">
+            <strong data-i18n="faq4_question">4. Is it safe to consume supplements daily?</strong><br>
+            <span data-i18n="faq4_answer">Yes, as long as they are used according to recommendations and within the
+                recommended doses. It is always advisable to consult a healthcare professional or nutritionist before
+                starting any supplementation.</span>
+        </p>
+    </section>
+
+
+    <div class="w-full max-w-2xl mt-8 mx-auto">
+
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-YOUR_ADSENSE_CLIENT"
+            data-ad-slot="YOUR_AD_SLOT" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+</body>
+
+</html>
