@@ -1,20 +1,16 @@
-// middleware.js
-
-import { NextResponse } from "@vercel/edge";
+import { next } from '@vercel/edge';
 
 export default async function middleware(request) {
   const url = new URL(request.url);
 
   if (url.pathname === "/") {
-    // Redirecionamento permanente para '/en_us/'
-    return NextResponse.redirect(new URL("/en_us/", request.url), 308);
+      return new Response(null, {
+          status: 308,
+          headers: {
+              Location: '/en_us/',
+          },
+      });
   }
 
-  // Continua o fluxo normal da requisição
-  return NextResponse.next();
+  return undefined;
 }
-
-// Definição de quais caminhos devem usar o middleware
-export const config = {
-  matcher: "/:path*",
-};
