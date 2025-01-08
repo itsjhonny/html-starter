@@ -1,7 +1,3 @@
-import { injectSpeedInsights } from "@vercel/speed-insights";
-
-injectSpeedInsights();
-
 function calculate() {
   const weight = parseFloat(document.getElementById("weight").value);
   const activity = document.getElementById("activity").value;
