@@ -1,3 +1,7 @@
+import { injectSpeedInsights } from "@vercel/speed-insights";
+
+injectSpeedInsights();
+
 function calculate() {
   const weight = parseFloat(document.getElementById("weight").value);
   const activity = document.getElementById("activity").value;
@@ -45,40 +49,42 @@ function insertResults(protein, creatine, wheyProtein, water) {
   document.getElementById("results").classList.remove("hidden");
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const languageSelector = document.getElementById('language-selector');
+document.addEventListener("DOMContentLoaded", () => {
+  const languageSelector = document.getElementById("language-selector");
 
   // Mapeamento dos valores do seletor para os códigos de idioma na URL
   const langMap = {
-      'pt-BR': 'pt_br',
-      'en-US': 'en_us',
-      'es-ES': 'es_es'
+    "pt-BR": "pt_br",
+    "en-US": "en_us",
+    "es-ES": "es_es",
   };
 
-  languageSelector.addEventListener('change', function () {
-      const selectedLang = this.value;
-      const langCode = langMap[selectedLang] || 'en_us'; // Padrão para 'en_us' se não encontrado
+  languageSelector.addEventListener("change", function () {
+    const selectedLang = this.value;
+    const langCode = langMap[selectedLang] || "en_us"; // Padrão para 'en_us' se não encontrado
 
-      // Obter a URL atual
-      const currentUrl = window.location.href;
+    // Obter a URL atual
+    const currentUrl = window.location.href;
 
-      // Expressão regular para detectar o padrão de idioma na URL (ex: /en_us/)
-      const langRegex = /\/(pt_br|en_us|es_es)\//;
+    // Expressão regular para detectar o padrão de idioma na URL (ex: /en_us/)
+    const langRegex = /\/(pt_br|en_us|es_es)\//;
 
-      let newUrl;
+    let newUrl;
 
-      if (langRegex.test(currentUrl)) {
-          // Substituir o código de idioma existente pelo novo
-          newUrl = currentUrl.replace(langRegex, `/${langCode}/`);
-      } else {
-          // Se não houver código de idioma, adicionar antes do caminho
-          const url = new URL(currentUrl);
-          // Supondo que o idioma seja a primeira parte do caminho
-          url.pathname = `/${langCode}${url.pathname.startsWith('/') ? '' : '/'}${url.pathname}`;
-          newUrl = url.toString();
-      }
+    if (langRegex.test(currentUrl)) {
+      // Substituir o código de idioma existente pelo novo
+      newUrl = currentUrl.replace(langRegex, `/${langCode}/`);
+    } else {
+      // Se não houver código de idioma, adicionar antes do caminho
+      const url = new URL(currentUrl);
+      // Supondo que o idioma seja a primeira parte do caminho
+      url.pathname = `/${langCode}${url.pathname.startsWith("/") ? "" : "/"}${
+        url.pathname
+      }`;
+      newUrl = url.toString();
+    }
 
-      // Redirecionar para a nova URL
-      window.location.href = newUrl;
+    // Redirecionar para a nova URL
+    window.location.href = newUrl;
   });
 });
